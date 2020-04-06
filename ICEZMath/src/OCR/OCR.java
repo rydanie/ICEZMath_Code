@@ -1,4 +1,6 @@
+
 /*package OCR;
+
 
 import java.awt.Graphics2D; 
 import net.sourceforge.tess4j.*; 
@@ -40,13 +42,16 @@ public class OCR
 		// performing scaling 
 		// and writing on a .png file 
 		BufferedImage fopimage = rescale.filter(opimage, null); 
+
 		ImageIO.write(fopimage, "jpg", new File("D:\\JAVA Programing\\Eclipse\\Projects\\ICEZMath\\Test Pictures\\x.jpg")); 
+
 		
 		// Instantiating the Tesseract class 
 		// which is used to perform OCR 
 		Tesseract it = new Tesseract(); 
 			
 		it.setDatapath("D:\\JAVA Programing\\Eclipse\\Projects\\ICEZMath\\Tesseract\\Tess4J\\tessdata"); 
+
 		
 		// doing OCR on the image 
 		// and storing result in string str 
@@ -56,6 +61,7 @@ public class OCR
 	
 	public static void main(String args[]) throws Exception 
 	{ 	
+
 		File f = new File("D:\\JAVA Programing\\Eclipse\\Projects\\ICEZMath\\Test Pictures\\x.jpg"); 
 	
 		BufferedImage ipimage = ImageIO.read(f); 
@@ -95,3 +101,4 @@ public class OCR
 	
 	
 }*/
+
