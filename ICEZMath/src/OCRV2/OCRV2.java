@@ -1,13 +1,16 @@
 package OCRV2;
 
-
 import java.io.File;
 import net.sourceforge.tess4j.*;
 
 public class OCRV2 
 {
+	public static String result;
+	static StringManipulator sm;
     public static void main(String[] args) 
     {
+    	
+    	
         // ImageIO.scanForPlugins(); // for server environment
         File imageFile = new File("D:\\JAVA Programing\\Eclipse\\Projects\\ICEZMath\\Test Pictures\\x.jpg");
         ITesseract instance = new Tesseract(); // JNA Interface Mapping
@@ -16,11 +19,14 @@ public class OCRV2
         instance.setLanguage("eng");
 
         try {
-            String result = instance.doOCR(imageFile);
+            result = instance.doOCR(imageFile);
             System.out.println(result);
         } catch (TesseractException e) 
         {
             System.err.println(e.getMessage());
         }
+        
+        
+        sm = new StringManipulator(result);
     }
 }
