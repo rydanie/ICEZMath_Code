@@ -1,24 +1,33 @@
 package OCRV2;
 
-import java.io
+import java.util.*;
+//import java.io
 import java.util.Arrays;
 
 public class StringManipulator
 {
 	String equation;
-	static int operand;
+	int operand;
+	ArrayList eList;
+	ArrayList savedList;
 	
 	public StringManipulator(String result)
 	{
 		equation = result;
+		eList = new ArrayList<Equation>();
 		
 		
 		System.out.println(result);
+		
+		FindOperand(equation);
+		GenerateEquation(operand);
+		
 	}
 
 	
 	public int FindOperand(String equation)
 	{
+		
 		if (equation.contains("+"))
 			
 			operand = 1;
@@ -39,32 +48,62 @@ public class StringManipulator
 		
 	}
 	
-	public Arrays GenerateEquation(int operand)
+	public void GenerateEquation(int op)
 	{
-		switch (operand)
+		Random r = new Random();
+		
+		switch (op)
 		{
 		case 1:
 			for(int i = 0; i < 4; i++)
 			{
-				String example = 
+				int x = r.nextInt(11);
+				int y = r.nextInt(11);
+				String example =  x + " + " + y;
+				
+				System.out.println(example);
+				
+				Equation a = new Equation(x,y,operand,example);
+				eList.add(a);
 			}
 			break;
 		case 2:
 			for(int i = 0; i < 4; i++)
 			{
-				String example = 
+				int x = r.nextInt(11);
+				int y = r.nextInt(11);
+				String example =  x + " - " + y;
+				
+				System.out.println(example);
+				
+				Equation a = new Equation(x,y,operand,example);
+				eList.add(a);
 			}
 			break;
 		case 3:
 			for(int i = 0; i < 4; i++)
 			{
-				String example = 
+				int x = r.nextInt(11);
+				int y = r.nextInt(11);
+				String example =  x + " * " + y;
+				
+				System.out.println(example);
+				
+				Equation a = new Equation(x,y,operand,example);
+				eList.add(a);
 			}
 			break;
 		case 4:
 			for(int i = 0; i < 4; i++)
 			{
-				String example = 
+				int x = r.nextInt(11);
+				int y = r.nextInt(11);
+				String example =  x + " - " + y;
+				
+				System.out.println(example);
+				
+				Equation a = new Equation(x,y,operand,example);
+				eList.add(a);
 			}
 			break;
 		default:
@@ -72,7 +111,24 @@ public class StringManipulator
 			break;
 			
 		}
-		return null;
+		
+		saveEquationList(eList);
+		
+	}
+	
+	public void saveEquationList(ArrayList a)
+	{
+		savedList = a;
+	}
+	
+	public ArrayList<Equation> getEquationList()
+	{
+		return savedList;
+	}
+	
+	public void clearList()
+	{
+		eList.clear();
 	}
 	
 
