@@ -2,6 +2,7 @@ package OCRV2;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Random;
 
 import net.sourceforge.tess4j.*;
 
@@ -17,9 +18,12 @@ public class OCRV2
     public static void main(String[] args) 
     {
     	
+    	Random rand = new Random();
+    	File[] files = new File( "C:\\\\Users\\\\ryley\\\\OneDrive\\\\Documents\\\\GitHub\\\\ICEZMath_Code\\\\ICEZMath\\\\Test Pictures" ).listFiles();
+    	File file = files[ rand.nextInt( files.length ) ];
     	
         // ImageIO.scanForPlugins(); // for server environment
-        File imageFile = new File("C:\\Users\\ryley\\OneDrive\\Documents\\GitHub\\ICEZMath_Code\\ICEZMath\\Test Pictures\\x.jpg");
+        File imageFile = file;//new File("C:\\Users\\ryley\\OneDrive\\Documents\\GitHub\\ICEZMath_Code\\ICEZMath\\Test Pictures\\x.jpg");
         ITesseract instance = new Tesseract(); // JNA Interface Mapping
         // ITesseract instance = new Tesseract1(); // JNA Direct Mapping
         instance.setDatapath("C:\\Users\\ryley\\OneDrive\\Documents\\GitHub\\ICEZMath_Code\\ICEZMath\\Tesseract\\Tess4J\\tessdata"); // replace <parentPath> with path to parent directory of tessdata
