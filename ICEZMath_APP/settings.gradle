@@ -1,0 +1,2 @@
+rootProject.name='ICEZ_TEST'
+include ':app'
