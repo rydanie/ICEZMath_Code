@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ICEZMathUI</string>
+    <string name="solve">Solve</string>
+    <string name="welcome_to_icezmath">Welcome to ICEZMath</string>
+    <string name="icezmath">ICEZMath</string>
+    <string name="click_solve_to_start_a_new_problem">Click SOLVE to start a new problem.</string>
+</resources>
